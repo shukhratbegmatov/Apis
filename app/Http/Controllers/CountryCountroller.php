@@ -8,8 +8,8 @@ use App\Models\Country;
 
 class CountryCountroller extends Controller
 {
-    function country()
+    function country($id)
     {
-        return Country::all();
+        return Country::find($id);
     }
 }
