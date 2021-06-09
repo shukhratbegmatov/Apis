@@ -21,10 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('country/{id?}', [CountryCountroller::class, 'country']);
-
-Route::post('country',function(){
-	return Country::create([
-		'id'=>null,
-		'name'=>'Namangan',
-	]);
-});
+Route::post('country', [CountryCountroller::class, 'store']);

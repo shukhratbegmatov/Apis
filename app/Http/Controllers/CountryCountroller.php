@@ -12,4 +12,7 @@ class CountryCountroller extends Controller
     {
         return $id ? Country::find($id) : Country::all();
     }
+    function store(Request $request){
+    	return Country::create($request->all());	
+    }
 }
