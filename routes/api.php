@@ -20,5 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('country/{id?}', [CountryCountroller::class, 'country']);
-Route::post('country', [CountryCountroller::class, 'store']);
+Route::resource('country',CountryCountroller::class);

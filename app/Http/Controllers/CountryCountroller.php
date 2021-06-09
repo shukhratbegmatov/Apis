@@ -8,7 +8,7 @@ use App\Models\Country;
 
 class CountryCountroller extends Controller
 {
-    function country($id = null)
+    function show($id = null)
     {
     	
         return $id ? Country::find($id) : Country::all();
@@ -20,4 +20,10 @@ class CountryCountroller extends Controller
     	]);
     	return Country::create($request->all());	
     }
+    function update(Request $request,$id){
+    	$country=Country::find($id);
+    	$country->update($request->all());
+    	return $country;
+    }
+    
 }
