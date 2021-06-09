@@ -21,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('country',CountryCountroller::class);
+
+Route::get('country/search/{name}',[CountryCountroller::class,'search']);

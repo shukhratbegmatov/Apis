@@ -25,5 +25,11 @@ class CountryCountroller extends Controller
     	$country->update($request->all());
     	return $country;
     }
+    function destroy($id){
+    	return Country::destroy($id);
+    }
+    function search($name){
+    	return Country::where('name','like','%' .$name. '%')->get();
+    }
     
 }
