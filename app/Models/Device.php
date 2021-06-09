@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model
+class Device extends Model
 {
-    public $table = 'country';
-    protected $fillable = [
+    public $table = 'device';
+    public $fillable = [
         'id',
         'name',
     ];

@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CountryCountroller;
+use App\Http\Controllers\Device;
+use App\Models\Country;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,3 +21,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('country/{id?}', [CountryCountroller::class, 'country']);
+
+Route::post('country',function(){
+	return Country::create([
+		'id'=>null,
+		'name'=>'Namangan',
+	]);
+});
